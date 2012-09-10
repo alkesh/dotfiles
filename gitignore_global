@@ -1,0 +1,10 @@
+# configure git to use this file by entering:
+# git config --global core.excludesfile ~/.gitignore_global
+
+*.swp
+*.swo
+*.swn
+TAGS
+.powrc
+
+features/alkesh.feature
