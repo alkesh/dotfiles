@@ -13,6 +13,7 @@ alias b='bundle exec'
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi=vim
 alias v=mvim
+alias vt='mvim --remote-tab'
 alias brake='b rake'
 
 alias gemtags='(for a in $GEM_HOME/gems/*;do cd $a;echo -n .;run_tags;done;echo)'
