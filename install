@@ -2,3 +2,4 @@ ln -fs ~/.dotfiles/bash_login ~/.bash_login
 ln -fs ~/.dotfiles/profile ~/.profile
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
 ln -fs ~/.dotfiles/rdebugrc ~/.rdebugrc
+ln -fs ~/.dotfiles/tmux.conf ~/.tmux.conf
