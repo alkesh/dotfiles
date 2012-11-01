@@ -1,0 +1,3 @@
+git config --global push.default current
+git config --global branch.autosetuprebase always
+git config --global branch.master.rebase true
