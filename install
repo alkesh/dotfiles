@@ -3,3 +3,4 @@ ln -fs ~/.dotfiles/profile ~/.profile
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
 ln -fs ~/.dotfiles/rdebugrc ~/.rdebugrc
 ln -fs ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -fs ~/.dotfiles/editrc ~/.editrc
