@@ -3,7 +3,7 @@ alias ra='echo Restarting Apache&&sudo apachectl restart'
 alias gs='git status'
 alias rr='rake restart'
 alias findtrailingspaces='grep -r -E "^.*[[:space:]]+$"'
-alias gl='git log --oneline --decorate -5'
+alias gl='git log --oneline --decorate -10'
 alias gla='git log --oneline --decorate'
 alias ga='git add -A'
 alias r=rails
@@ -15,8 +15,8 @@ alias vi=vim
 alias v=mvim
 alias vt='mvim --remote-tab'
 alias brake='b rake'
-
 alias gemtags='(for a in $GEM_HOME/gems/*;do cd $a;echo -n .;run_tags;done;echo)'
+alias t='title'
 
 function cdl { cd $1; ls;}
 
@@ -34,8 +34,10 @@ parse_git_dirty() {
   [[ $? == 1 ]] && echo "*"
 }
 
+title () { echo -ne "\033]0;$@\\007"; }
+
 # Mountain Lion gcc installed from: https://github.com/kennethreitz/osx-gcc-installer/downloads
-export CC=/usr/bin/cc # LLVM based compiler
+#export CC=/usr/bin/cc # LLVM based compiler
 #export CC=`which gcc-4.2`
 export RUBYOPT="-r rubygems"
 
