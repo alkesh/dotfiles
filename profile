@@ -20,9 +20,9 @@ alias t='title'
 
 function cdl { cd $1; ls;}
 
-#source /Users/alkesh/.git-completion.bash
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+# original git-completion from: https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
 fi
 
 parse_git_branch() {
