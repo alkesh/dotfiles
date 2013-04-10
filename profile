@@ -34,6 +34,7 @@ parse_git_dirty() {
   [[ $? == 1 ]] && echo "*"
 }
 
+
 title () { echo -ne "\033]0;$@\\007"; }
 
 # Mountain Lion gcc installed from: https://github.com/kennethreitz/osx-gcc-installer/downloads
@@ -48,4 +49,17 @@ fi
 export EDITOR=mvim
 export PATH=~/bin:$PATH
 
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)$ '
+PROMPT_COMMAND='EXITSTATUS=$?'
+
+exitstatusdollar() {
+  red=$'\033[1;31m'
+  none=$'\033[m'
+
+  if [ $EXITSTATUS -eq 0 ]
+  then
+    echo -e "${none}\$"
+  else
+    echo -e "${red}\$[$EXITSTATUS]${none}"
+  fi
+}
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)$(exitstatusdollar) '
