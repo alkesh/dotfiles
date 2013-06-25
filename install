@@ -5,3 +5,19 @@ ln -fs ~/.dotfiles/rdebugrc ~/.rdebugrc
 ln -fs ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -fs ~/.dotfiles/editrc ~/.editrc
 ln -fs ~/.dotfiles/git-completion.bash ~/.git-completion.bash
+./gitconfig
+
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]] ; then
+  warn "You appear to be running this script from within iTerm.app which could"
+  warn "overwrite your new preferences on quit.\n"
+  warn "Please quit iTerm and run this from Terminal.app or an SSH session.\n"
+  exit 3
+fi
+
+if ps wwwaux | egrep -q 'iTerm\.app' >/dev/null ; then
+  warn "You appear to have iTerm.app currently running. Please quit the"
+  warn "application so your updates won't get overridden on quit.\n"
+  exit 4
+fi
+
+cp -f ~/.com.googlecode.iterm2.plist ~/Library/Preferences/
