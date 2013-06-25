@@ -1,6 +1,7 @@
 alias ls='ls -G'
 alias ra='echo Restarting Apache&&sudo apachectl restart'
 alias gs='git status'
+alias gp='git pull'
 alias rr='rake restart'
 alias findtrailingspaces='grep -r -E "^.*[[:space:]]+$"'
 alias gl='git log --oneline --decorate -10'
@@ -19,6 +20,10 @@ alias gemtags='(for a in $GEM_HOME/gems/*;do cd $a;echo -n .;run_tags;done;echo)
 alias t='title'
 
 function cdl { cd $1; ls;}
+
+if [ -f /opt/boxen/env.sh ]; then
+  source /opt/boxen/env.sh
+fi
 
 # original git-completion from: https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then
@@ -42,14 +47,13 @@ title () { echo -ne "\033]0;$@\\007"; }
 #export CC=`which gcc-4.2`
 export RUBYOPT="-r rubygems"
 
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 export EDITOR=mvim
 export PATH=~/bin:$PATH
 
-PROMPT_COMMAND='EXITSTATUS=$?'
+#PROMPT_COMMAND='EXITSTATUS=$?'
+PROMPT_COMMAND='history -a'
 
 exitstatusdollar() {
   red=$'\033[1;31m'
@@ -62,4 +66,5 @@ exitstatusdollar() {
     echo -e "${red}\$[$EXITSTATUS]${none}"
   fi
 }
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)\[$(exitstatusdollar) '
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)$(exitstatusdollar) '
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)\$ '
