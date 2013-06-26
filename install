@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ln -fs ~/.dotfiles/bash_login ~/.bash_login
 ln -fs ~/.dotfiles/profile ~/.profile
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
@@ -6,18 +8,17 @@ ln -fs ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -fs ~/.dotfiles/editrc ~/.editrc
 ln -fs ~/.dotfiles/git-completion.bash ~/.git-completion.bash
 ./gitconfig
+cp -f ~/.dotfiles/com.googlecode.iterm2.plist ~/Library/Preferences/
 
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]] ; then
-  warn "You appear to be running this script from within iTerm.app which could"
-  warn "overwrite your new preferences on quit.\n"
-  warn "Please quit iTerm and run this from Terminal.app or an SSH session.\n"
+  echo "You appear to be running this script from within iTerm.app which could"
+  echo "overwrite your new preferences on quit."
+  echo "Please quit iTerm and run this from Terminal.app or an SSH session."
   exit 3
 fi
 
 if ps wwwaux | egrep -q 'iTerm\.app' >/dev/null ; then
-  warn "You appear to have iTerm.app currently running. Please quit the"
-  warn "application so your updates won't get overridden on quit.\n"
+  echo "You appear to have iTerm.app currently running. Please quit the"
+  echo "application so your updates won't get overridden on quit."
   exit 4
 fi
-
-cp -f ~/.com.googlecode.iterm2.plist ~/Library/Preferences/
