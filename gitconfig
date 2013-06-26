@@ -1,4 +1,18 @@
+#!/bin/bash
+
 git config --global push.default current
 git config --global branch.autosetuprebase always
 git config --global branch.master.rebase true
 git config --global rerere.enabled true
+git config --global user.name 'Alkesh Vaghmaria'
+git config --global color.diff auto
+git config --global credential.helper osxkeychain
+git config --global core.excludesfile ~/.gitignore_global
+git config --global core.editor vim
+git config --global mergetool.keepbackup false
+#git config --global merge.tool p4merge
+if ! git config --global user.email 1>/dev/null; then
+  echo "Enter email address used for git config:"
+  read gitemail
+  git config --global user.email $gitemail
+fi
