@@ -55,6 +55,10 @@ export PATH=~/bin:$PATH
 #PROMPT_COMMAND='EXITSTATUS=$?'
 PROMPT_COMMAND='history -a'
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 exitstatusdollar() {
   red=$'\033[1;31m'
   none=$'\033[m'
@@ -66,5 +70,16 @@ exitstatusdollar() {
     echo -e "${red}\$[$EXITSTATUS]${none}"
   fi
 }
+
+ruby_version_prompt() {
+  if [ -f `which rbenv` ]; then
+    rbenv_ruby_version=`rbenv version | sed -e 's/ .*//'`
+    echo -e $rbenv_ruby_version
+  else
+    echo -e $RUBY_VERSION
+  fi
+}
+
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)$(exitstatusdollar) '
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)\$ '
+
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$(ruby_version_prompt)]$(parse_git_dirty)\$ '
