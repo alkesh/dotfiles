@@ -53,7 +53,7 @@ export EDITOR=mvim
 export PATH=~/bin:$PATH
 
 #PROMPT_COMMAND='EXITSTATUS=$?'
-PROMPT_COMMAND='history -a'
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
