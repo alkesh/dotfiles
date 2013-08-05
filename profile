@@ -61,6 +61,9 @@ ruby_version_prompt() {
   fi
 }
 
+# dash shortcut
+function d { open "dash://$1"; }
+
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$RUBY_VERSION]$(parse_git_dirty)$(exitstatusdollar) '
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)[$(ruby_version_prompt)]$(parse_git_dirty)\$ '
