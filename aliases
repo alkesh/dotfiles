@@ -1,3 +1,6 @@
+alias ..='cd ..'
+alias ::='cd ../..'
+alias :::='cd ../../..'
 alias ls='ls -G'
 alias ra='echo Restarting Apache&&sudo apachectl restart'
 alias gs='git status'
