@@ -11,8 +11,8 @@ git config --global core.excludesfile ~/.gitignore_global
 git config --global core.editor vim
 git config --global mergetool.keepbackup false
 git config --global merge.tool opendiff
-
-#git config --global merge.tool p4merge
+git config --global alias.co checkout
+git config --global alias.s status
 if ! git config --global user.email 1>/dev/null; then
   echo "Enter email address used for git config:"
   read gitemail
