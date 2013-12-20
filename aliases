@@ -13,6 +13,7 @@ alias gl='git log --oneline --decorate -10'
 alias gla='git log --oneline --decorate'
 alias gp='git pull'
 alias gs='git status'
+alias ll='ls -la'
 alias ls='ls -G'
 alias r=rails
 alias ra='echo Restarting Apache&&sudo apachectl restart'
