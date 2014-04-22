@@ -7,8 +7,8 @@ ln -fs ~/.dotfiles/git-completion.bash ~/.git-completion.bash
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
 ln -fs ~/.dotfiles/irbrc ~/.irbrc
 ln -fs ~/.dotfiles/profile ~/.profile
+ln -fs ~/.dotfiles/railsrc ~/.railsrc
 ln -fs ~/.dotfiles/rdebugrc ~/.rdebugrc
-ln -fs ~/.dotfiles/slate ~/.slate
 ln -fs ~/.dotfiles/tmux.conf ~/.tmux.conf
 ./gitconfig
 
