@@ -1,0 +1,6 @@
+rbenv install 1.9.3-p547
+rbenv alias 1.9.3 $_
+rbenv install 2.1.2
+rbenv alias 2.1 $_
+echo "bundler" > ~/.rbenv/default-gems
+rbenv global 2.1.2

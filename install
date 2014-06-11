@@ -2,6 +2,7 @@
 
 ln -fs ~/.dotfiles/aliases ~/.aliases
 ln -fs ~/.dotfiles/bash_login ~/.bash_login
+ln -fs ~/.dotfiles/Brewfile ~/Brewfile
 ln -fs ~/.dotfiles/editrc ~/.editrc
 ln -fs ~/.dotfiles/git-completion.bash ~/.git-completion.bash
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
