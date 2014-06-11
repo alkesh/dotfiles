@@ -2,10 +2,6 @@ source ~/.aliases
 
 function cdl { cd $1; ls;}
 
-if [ -f /opt/boxen/env.sh ]; then
-  source /opt/boxen/env.sh
-fi
-
 # original git-completion from: https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
