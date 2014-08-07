@@ -9,6 +9,7 @@ alias g=git
 alias ga='git add -A'
 alias gemtags='(for a in $GEM_HOME/gems/*;do cd $a;echo -n .;run_tags;done;echo)'
 alias gitx=/Applications/GitX.app/Contents/Resources/gitx
+alias gd='git diff'
 alias gl='git log --oneline --decorate -10'
 alias gla='git log --oneline --decorate'
 alias gp='git pull'
