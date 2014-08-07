@@ -19,6 +19,7 @@ alias ls='ls -G'
 alias r=rails
 alias ra='echo Restarting Apache&&sudo apachectl restart'
 alias rr='rake restart'
+alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/usr/bin/xcrun swift'
 alias t='title'
 alias v=mvim
 alias vi=vim
