@@ -49,11 +49,33 @@ ruby_version_prompt() {
 # dash shortcut
 function d { open "dash://$1"; }
 
+# set iterm profile – copes with tmux
+function set_iterm_profile() {
+  if [ -n "$TMUX" ]; then
+    echo -e "\033Ptmux;\033\033]50;SetProfile=$1\007\033\\"
+  else
+    echo -e "\033]50;SetProfile=$1\a"
+  fi
+}
+
 # docker
 eval $(boot2docker shellinit 2>/dev/null)
 
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# set the TERM to support 256 colours
+export TERM="xterm-256color"
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+
+# list my tmux sessions
+tmux ls
 
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")[$(ruby_version_prompt)]\$ '
