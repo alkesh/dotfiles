@@ -1,0 +1,13 @@
+# ~/.tmuxinator/vim-console.yml
+
+name: '<%= `basename ${PWD/./}` %>'
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+windows:
+  - main:
+      layout: 7cf2,256x84,0,0[256x67,0,0,19,256x16,0,68,20]
+      panes:
+          - vim
+          - # empty
