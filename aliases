@@ -33,4 +33,5 @@ alias t='title'
 alias v='pnt;vim'
 alias va=vagrant
 alias vi=vim
+alias vim=nvim
 alias vt='mvim --remote-tab'
