@@ -6,6 +6,38 @@ fi
 
 function cdl { cd $1; ls;}
 
+# Cucumber
+function c {
+  if [ -f "./bin/docker/cucumber" ]; then
+    echo "Running bin/docker/cucumber..."
+    command bin/docker/cucumber $@
+  else
+    echo "Running bundle exec cucumber..."
+    command bundle exec cucumber $@
+  fi
+}
+
+# RSpec
+function s {
+  if [ -f "./bin/docker/rspec" ]; then
+    echo "Running bin/docker/rspec..."
+    command bin/docker/rspec $@
+  else
+    echo "Running bundle exec rspec..."
+    command bundle exec rspec $@
+  fi
+}
+
+# Rubocop
+function cop {
+  if [ -f "./.rubocop.yml" ]; then
+    echo "Running bundle exec rubocop..."
+    command bundle exec rubocop $@
+  else
+    echo ".rubocop.yml not found!"
+  fi
+}
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
@@ -58,8 +90,8 @@ function set_iterm_profile() {
   fi
 }
 
-# docker
-eval $(boot2docker shellinit 2>/dev/null)
+# homebrew
+export HOMEBREW_GITHUB_API_TOKEN=721a6a3fcbef7e5f4252f193e571bcadf08b5a89
 
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -76,6 +108,9 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # list my tmux sessions
 tmux ls
+
+# ingore commands beginning with whitespace, and duplicates too
+HISTCONTROL=ignoreboth
 
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
   PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")[$(ruby_version_prompt)]\$ '
