@@ -109,9 +109,6 @@ export PATH=$PATH:$GOPATH/bin
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
-# list my tmux sessions
-tmux ls
-
 # ingore commands beginning with whitespace, and duplicates too
 HISTCONTROL=ignoreboth
 
