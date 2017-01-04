@@ -90,6 +90,9 @@ function set_iterm_profile() {
   fi
 }
 
+# iterm shell integration https://www.iterm2.com/documentation-shell-integration.html
+source ~/.iterm2_shell_integration.`basename $SHELL`
+
 # homebrew
 export HOMEBREW_GITHUB_API_TOKEN=721a6a3fcbef7e5f4252f193e571bcadf08b5a89
 
