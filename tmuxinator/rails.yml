@@ -1,4 +1,4 @@
-# ~/.tmuxinator/vim-console.yml
+# ~/.tmuxinator/rails.yml
 
 name: '<%= `basename ${PWD/./}` %>'
 

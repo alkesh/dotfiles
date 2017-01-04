@@ -5,7 +5,11 @@
 *.swo
 *.swn
 TAGS
+.tags
 .powrc
 
 features/alkesh.feature
 .DS_Store
+
+.idea
+*.iml

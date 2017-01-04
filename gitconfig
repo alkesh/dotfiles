@@ -1,25 +1,26 @@
 #!/bin/bash
 
-git config --global push.default current
-git config --global branch.autosetuprebase always
-git config --global branch.master.rebase true
-git config --global rerere.enabled true
-git config --global user.name 'Alkesh Vaghmaria'
-git config --global color.diff auto
-git config --global credential.helper osxkeychain
-git config --global core.excludesfile ~/.gitignore_global
-git config --global core.editor vim
-git config --global mergetool.keepbackup false
-git config --global merge.tool opendiff
+git config --global alias.cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|development' | xargs -n 1 git branch -d"
 git config --global alias.co checkout
 git config --global alias.cob 'checkout -b'
 git config --global alias.cod 'checkout develop'
 git config --global alias.com 'checkout master'
-git config --global alias.dfw 'diff --ignore-space-change'
 git config --global alias.dfc 'diff --cached'
-git config --global alias.s status
+git config --global alias.dfw 'diff --ignore-space-change'
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
-git config --global alias.cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|development' | xargs -n 1 git branch -d"
+git config --global alias.s status
+git config --global alias.sa 'stash apply'
+git config --global branch.autosetuprebase always
+git config --global branch.master.rebase true
+git config --global color.diff auto
+git config --global core.editor vim
+git config --global core.excludesfile ~/.gitignore_global
+git config --global credential.helper osxkeychain
+git config --global merge.tool opendiff
+git config --global mergetool.keepbackup false
+git config --global push.default current
+git config --global rerere.enabled true
+git config --global user.name 'Alkesh Vaghmaria'
 if ! git config --global user.email 1>/dev/null; then
   echo "Enter email address used for git config:"
   read gitemail

@@ -11,3 +11,5 @@ windows:
       panes:
           - vim
           - # empty
+  - daemons:
+    - ./bin/run_all_the_daemons
