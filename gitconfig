@@ -1,6 +1,7 @@
 #!/bin/bash
+set +H
 
-git config --global alias.cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|development' | xargs -n 1 git branch -d"
+git config --global alias.cleanup "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|development' | xargs -n 1 git branch -d"
 git config --global alias.co checkout
 git config --global alias.cob 'checkout -b'
 git config --global alias.cod 'checkout develop'
