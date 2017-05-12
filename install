@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ln -fs ~/.dotfiles/ackrc ~/.ackrc
 ln -fs ~/.dotfiles/aliases ~/.aliases
 ln -fs ~/.dotfiles/bash_login ~/.bash_login
 ln -fs ~/.dotfiles/editrc ~/.editrc
