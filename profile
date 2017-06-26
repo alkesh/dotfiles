@@ -61,12 +61,12 @@ export RUBYOPT="-r rubygems"
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-export EDITOR=mvim
+export EDITOR=vim
 export PATH=~/bin:$PATH
 
 
 #rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 ruby_version_prompt() {
@@ -107,7 +107,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # ingore commands beginning with whitespace, and duplicates too
 HISTCONTROL=ignoreboth
