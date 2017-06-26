@@ -9,6 +9,10 @@ Install tmux:
 
         brew install tmux
 
+Also, install this:
+
+        brew install reattach-to-user-namespace
+
 Install Tundle, the tmux plugin manager:
 
         git clone --depth=1 https://github.com/chilicuil/tundle ~/.tmux/plugins/tundle

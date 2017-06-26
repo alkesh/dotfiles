@@ -1,7 +1,7 @@
-# ~/.tmuxinator/vim.yml
+# ~/.tmuxinator/brightspot.yml
 
-name: '<%= `basename ${PWD/./}` %>'
-root: .
+name: brightspot
+root: ~/code/wearefriday/nuffield/nuff-brightspot-cms
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,12 +27,16 @@ root: .
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t brightspot
+
 windows:
-  - editor:
-      layout: 7cf2,256x84,0,0[256x67,0,0,19,256x16,0,68,20]
+  - main:
+      layout: 0a19,257x65,0,0[257x46,0,0{128x46,0,0,16,128x46,129,0,20},257x18,0,47,19]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim
-        - #blank
+        - docker-compose up -d && docker-compose logs -tf maven
+        - docker exec -ti nuffbrightspotcms_maven_1 bash -c 'tail -f target/cargo/logs/*.log'
+        - # bash
