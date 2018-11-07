@@ -1,6 +1,6 @@
 # ~/.tmuxinator/vim.yml
 
-name: '<%= `basename ${PWD/./}` %>'
+name: '<%= `basename ${PWD##*.}` %>'
 root: .
 
 # Optional tmux socket

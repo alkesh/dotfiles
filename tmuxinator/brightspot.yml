@@ -38,5 +38,5 @@ windows:
       # synchronize: after
       panes:
         - docker-compose up -d && docker-compose logs -tf maven
-        - docker exec -ti nuffbrightspotcms_maven_1 bash -c 'tail -f target/cargo/logs/*.log'
+        - docker exec -ti nuff-brightspot-cms_maven_1 bash -c 'tail -f target/cargo/logs/*.log'
         - # bash
