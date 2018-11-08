@@ -32,7 +32,11 @@ function s {
 function cop {
   if [ -f "./.rubocop.yml" ]; then
     echo "Running bundle exec rubocop..."
-    command bundle exec rubocop $@
+    if [ -f "./bin/docker/run" ]; then
+      command bin/docker/run rubocop $@
+    else
+      command bundle exec rubocop $@
+    fi
   else
     echo ".rubocop.yml not found!"
   fi
