@@ -31,11 +31,12 @@ function s {
 # Rubocop
 function cop {
   if [ -f "./.rubocop.yml" ]; then
-    echo "Running bundle exec rubocop..."
     if [ -f "./bin/docker/run" ]; then
+      echo "Running rubocop in docker..."
       command bin/docker/run rubocop $@
     else
-      command bundle exec rubocop $@
+      echo "Running bundle exec rubocop (parallel)..."
+      command bundle exec rubocop --parallel $@
     fi
   else
     echo ".rubocop.yml not found!"
