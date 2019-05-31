@@ -9,6 +9,7 @@ git config --global alias.com 'checkout master'
 git config --global alias.dfc 'diff --cached'
 git config --global alias.dfw 'diff --ignore-space-change'
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.pushf "push --force-with-lease"
 git config --global alias.s status
 git config --global alias.sa 'stash apply'
 git config --global branch.autosetuprebase always
