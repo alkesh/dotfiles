@@ -35,8 +35,13 @@ function cop {
       echo "Running rubocop in docker..."
       command bin/docker/run rubocop $@
     else
-      echo "Running bundle exec rubocop (parallel)..."
-      command bundle exec rubocop --parallel $@
+      if [[ $@ == *"-a"* ]]; then
+        echo "Running bundle exec rubocop..."
+        command bundle exec rubocop $@
+      else
+        echo "Running bundle exec rubocop (parallel)..."
+        command bundle exec rubocop --parallel $@
+      fi
     fi
   else
     echo ".rubocop.yml not found!"
