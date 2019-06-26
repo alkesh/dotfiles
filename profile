@@ -117,7 +117,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # ingore commands beginning with whitespace, and duplicates too
 HISTCONTROL=ignoreboth
