@@ -45,4 +45,7 @@ alias vi=vim
 alias vt='mvim --remote-tab'
 
 # completion for aliases
-complete -c -f b
+
+if [[ "$SHELL" == "/bin/bash" ]] ; then
+  complete -c -f b
+fi

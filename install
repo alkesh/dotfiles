@@ -1,14 +1,20 @@
 #!/bin/bash
 
+if [[ "$SHELL" == "/bin/zsh" ]] ; then
+  ln -fs ~/.dotfiles/profile ~/.zprofile
+  ln -fs ~/.dotfiles/zshrc ~/.zshrc
+else
+  ln -fs ~/.dotfiles/bash_login ~/.bash_login
+  ln -fs ~/.dotfiles/iterm2_shell_integration.bash ~/.iterm2_shell_integration.bash
+  ln -fs ~/.dotfiles/profile ~/.profile
+fi
+
 ln -fs ~/.dotfiles/ackrc ~/.ackrc
 ln -fs ~/.dotfiles/aliases ~/.aliases
-ln -fs ~/.dotfiles/bash_login ~/.bash_login
 ln -fs ~/.dotfiles/editrc ~/.editrc
 ln -fs ~/.dotfiles/git-completion.bash ~/.git-completion.bash
 ln -fs ~/.dotfiles/gitignore_global ~/.gitignore_global
 ln -fs ~/.dotfiles/irbrc ~/.irbrc
-ln -fs ~/.dotfiles/iterm2_shell_integration.bash ~/.iterm2_shell_integration.bash
-ln -fs ~/.dotfiles/profile ~/.profile
 ln -fs ~/.dotfiles/pryrc ~/.pryrc
 ln -fs ~/.dotfiles/railsrc ~/.railsrc
 ln -fs ~/.dotfiles/rdebugrc ~/.rdebugrc
