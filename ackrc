@@ -1,2 +1,8 @@
 --ignore-file=is:.tags
+--ignore-file=is:tags
+--ignore-file=is:development.log
+--ignore-file=is:test.log
+--ignore-file=is:examples.txt
+--ignore-directory=is:coverage
+--ignore-directory=is:tmp/capybara
 --pager=less -FRX

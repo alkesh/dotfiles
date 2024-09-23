@@ -1,5 +1,7 @@
 # alkesh's profile
 
+export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
+
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
@@ -71,9 +73,7 @@ export RUBYOPT="-r rubygems"
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-export EDITOR=vim
-export PATH=~/bin:$PATH
-
+export EDITOR=nvim
 
 #rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
@@ -127,3 +127,9 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# postgres 16
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@16/lib/pkgconfig"
